@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ViniCadena1405/meu-projeto#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "postgres": "^3.4.5"
   }
 }
