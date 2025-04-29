@@ -1,0 +1,26 @@
+{
+  "name": "meu-projeto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViniCadena1405/meu-projeto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViniCadena1405/meu-projeto/issues"
+  },
+  "homepage": "https://github.com/ViniCadena1405/meu-projeto#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
