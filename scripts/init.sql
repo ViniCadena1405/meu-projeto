@@ -1,95 +1,35 @@
--- init.sql
-
--- Criar extensão para suportar UUIDs, se ainda não estiver ativada
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
--- Criar tabela de usuários com UUID como chave primária
 CREATE TABLE IF NOT EXISTS users (
-  id VARCHAR(100) PRIMARY KEY INT UNIQUE NOT NULL,
-  name VARCHAR(100) NOT NULL,
-  eliminated VARCHAR(100) NOT NULL
+    id INTEGER PRIMARY KEY,
+    nome VARCHAR(255) UNIQUE NOT NULL,
+    age INTEGER,
+    country VARCHAR(255) NOT NULL,
+    profession VARCHAR(255),
+    phonenumber VARCHAR(255) UNIQUE
 );
 
--- Inserir 20 usuários com nomes e countrys aleatórios
-INSERT INTO users (id, name, eliminated)
+CREATE TABLE IF NOT EXISTS phone (
+    nome VARCHAR(255) UNIQUE PRIMARY KEY,
+    phonecountry VARCHAR(255),
+    phonearea VARCHAR(255),
+    phonecode VARCHAR(255)
+);
+
+INSERT INTO users(id, nome, age, country, profession, phonenumber)
 VALUES
-  (1, "", "no"),
-  (2, "", "no"),
-  (3, "", "no"),
-  (4, "", "no"),
-  (5, "", "no"),
-  (6, "", "no"),
-  (7, "", "no"),
-  (8, "", "no"),
-  (9, "", "no"),
-  (10, "", "no"),
-  (11, "", "no"),
-  (12, "", "no"),
-  (13, "", "no"),
-  (14, "", "no"),
-  (15, "", "no"),
-  (16, "", "no"),
-  (17, "", "no"),
-  (18, "", "no"),
-  (19, "", "no"),
-  (20, "", "no"),
-  (21, "", "no"),
-  (22, "", "no"),
-  (23, "", "no"),
-  (24, "", "no"),
-  (25, "", "no"),
-  (26, "", "no"),
-  (27, "", "no"),
-  (28, "", "no"),
-  (29, "", "no"),
-  (30, "", "no"),
-  (31, "", "no"),
-  (32, "", "no"),
-  (33, "", "no"),
-  (34, "", "no"),
-  (35, "", "no"),
-  (36, "", "no"),
-  (37, "", "no"),
-  (38, "", "no"),
-  (39, "", "no"),
-  (40, "", "no"),
-  (41, "", "no"),
-  (42, "", "no"),
-  (43, "", "no"),
-  (44, "", "no"),
-  (45, "", "no"),
-  (46, "", "no"),
-  (47, "", "no"),
-  (48, "", "no"),
-  (49, "", "no"),
-  (50, "", "no"),
-  (51, "", "no"),
-  (52, "", "no"),
-  (53, "", "no"),
-  (54, "", "no"),
-  (55, "", "no"),
-  (56, "", "no"),
-  (57, "", "no"),
-  (58, "", "no"),
-  (59, "", "no"),
-  (60, "", "no"),
-  (61, "", "no"),
-  (62, "", "no"),
-  (63, "", "no"),
-  (64, "", "no"),
-  (65, "", "no"),
-  (66, "", "no"),
-  (67, "", "no"),
-  (68, "", "no"),
-  (69, "", "no"),
-  (70, "", "no"),
-  (71, "", "no"),
-  (72, "", "no"),
-  (73, "", "no"),
-  (74, "", "no"),
-  (75, "", "no"),
-  (76, "", "no"),
-  (77, "", "no"),
-  (78, "", "no"),
-  (79, "", "no"),
-  (80, "", "no"),
+    (1, 'Balti Rusu', 74, 'Moldova', 'Retired', '+373(50) 74983-9380'),
+    (2, 'Gloria Hernandez', 45, 'El Salvador', 'Actor', '+503 83782-1037'),
+    (3, 'Bruno Barros', 83, 'Brazil', 'Retired', '+55(61) 38023-0385'),
+    (4, 'Helene Ngoyi', 58, 'Democratic Republic of Congo', 'Scientist', '+243 02838-2937'),
+    (5, 'Gus King', 69, 'New Zealand', 'Teacher', '+64(0) 30938-3944'),
+    (6, 'Lee Scholtes', 46, 'Luxembourg', 'Doctor', '+352 65982-6227');
+
+
+ALTER TABLE phone ADD FOREIGN KEY (nome) REFERENCES users (nome);
+
+ALTER TABLE phone ADD FOREIGN KEY (phonecountry) REFERENCES users (phonenumber);
+
+ALTER TABLE phone ADD FOREIGN KEY (phonearea) REFERENCES users (phonenumber);
+
+ALTER TABLE phone ADD FOREIGN KEY (phonecode) REFERENCES users (phonenumber);
