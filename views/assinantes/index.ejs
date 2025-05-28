@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cadastro de usuários</h1>
+    <form action = "/assinantes" method = "POST">
+        <input type = "text" name = "nome" placeholder = "Nome" required>
+
+        <select name = "tipo de assinatura" required>
+            <option value = "Básica"></option>
+            <option value = "Premium"></option>
+            <option value = "Platina"></option>
+        </select>
+
+        <button type = "submit">Criar</button>
+    </form>
+
+    <hr>
+
+    <ul>
+        <% assinantes.forEach(assinatura => { %>
+            <li>
+                <%= assinatura.nome %> - <%= assinatura.tipo %>
+                <form action = "/assinantes/edit/<%= assinatura.id %>" method = "POST" style = "display: inline;">
+                    <input type = "text" name = "nome" placeholder = "Novo nome" required>
+
+                    <select name = "tipo de assinatura" required>
+                        <option value = "Básica"></option>
+                        <option value = "Premium"></option>
+                        <option value = "Platina"></option>
+                    </select>
+
+                    <button type = "submit">Editar</button>
+                </form>
+
+                <form action = "/assinantes/delete/<%= assinatura.id %>" method = "POST" style = "display: inline;">
+                    <button type = "submit">Deletar</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

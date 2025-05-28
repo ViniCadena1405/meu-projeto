@@ -1,0 +1,62 @@
+<h2>Página usuários</h2>
+<p>Lista de usuários</p>
+
+<table border = "1" id = "usersTable">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>age</th>
+            <th>country</th>
+            <th>profession</th>
+            <th>phonenumber</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan = "6">Carregando...</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    async function fetchUsers() {
+        try {
+            const response = await fetch('/users');
+            if(!response.ok) {
+                throw new Error("Erro ao listar os usuários");
+            }
+
+            const users = await response.json();
+            const tableBody = document.querySelector('#usersTable tbody');
+            tableBody.innerHTML = '';
+
+            if(users.length > 0) {
+                users.forEach(user => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${user.id}</td>
+                        <td>${user.nome}</td>
+                        <td>${user.age}</td>
+                        <td>${user.country}</td>
+                        <td>${user.profession}</td>
+                        <td>${user.phonenumber}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+
+            else {
+                tableBody.innerHTML = '<tr><td colspan = "6">Nenhum usuário encontrado</td></tr>';
+            }
+        }
+
+        catch(error) {
+            console.error(error);
+            const tableBody = document.querySelector('#usersTable tbody');
+            tableBody.innerHTML = '<tr><td colspan = "6">Erro ao carregar</td></tr>';
+        }
+    }
+
+    fetchUsers();
+</script>
