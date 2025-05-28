@@ -16,9 +16,9 @@ CREATE TABLE IF NOT EXISTS assinatura (
 
 INSERT INTO users(nome, age, country, profession, phonenumber)
 VALUES
-    ('Balti Rusu', 74, 'Moldova', 'Retired', '+373(50) 74983-9380'),
-    ('Gloria Hernandez', 45, 'El Salvador', 'Actor', '+503 83782-1037'),
-    ('Bruno Barros', 83, 'Brazil', 'Retired', '+55(61) 38023-0385'),
-    ('Helene Ngoyi', 58, 'Democratic Republic of Congo', 'Scientist', '+243 02838-2937'),
-    ('Gus King', 69, 'New Zealand', 'Teacher', '+64(0) 30938-3944'),
-    ('Lee Scholtes', 46, 'Luxembourg', 'Doctor', '+352 65982-6227');
+    ('Balti Rusu', 74, 'Moldávía', 'Aposentada', '+373(50) 74983-9380'),
+    ('Gloria Hernandez', 45, 'El Salvador', 'Ator', '+503 83782-1037'),
+    ('Bruno Barros', 83, 'Brasil', 'Aposentado', '+55(61) 38023-0385'),
+    ('Helene Ngoyi', 58, 'República Democrática do Congo', 'Cientista', '+243 02838-2937'),
+    ('Gus King', 69, 'Nova Zelândia', 'Professor', '+64(0) 30938-3944'),
+    ('Lee Scholtes', 46, 'Luxemburgo', 'Médico', '+352 65982-6227');
