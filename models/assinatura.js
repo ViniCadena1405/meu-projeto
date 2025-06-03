@@ -13,7 +13,7 @@ module.exports = {
     },
 
     async update(user_id, data) {
-        const query = 'UPDATE assinatura SET nome = $1, tipo = $2 WHERE user_id = $3';
+        const query = 'UPDATE assinatura SET username = $1, tipo = $2 WHERE user_id = $3';
         const values = [data.username, data.tipo, user_id];
         return db.query(query, values);
     },

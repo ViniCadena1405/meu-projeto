@@ -1,15 +1,15 @@
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
-    nome VARCHAR(255) UNIQUE NOT NULL,
+    nome VARCHAR(255) UNIQUE,
     age INT,
-    country VARCHAR(255) NOT NULL,
+    country VARCHAR(255),
     profession VARCHAR(255),
     phonenumber VARCHAR(255) UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS assinatura (
     user_id SERIAL PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
+    username VARCHAR(255),
     tipo VARCHAR(255),
     comprado_em TIMESTAMP DEFAULT NOW()
 );
