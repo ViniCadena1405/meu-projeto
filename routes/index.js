@@ -11,4 +11,10 @@ router.get("/sobre", sobre.index);
 
 router.get("/login", login.index);
 
+router.get("/:id", PessoasControle.createUser);
+
+router.delete("/:id", PessoasControle.deleteUser);
+
+router.post("/users", PessoasControle.updateUser);
+
 module.exports = router;
