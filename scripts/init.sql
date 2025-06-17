@@ -1,10 +1,7 @@
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255) UNIQUE,
-    age INT,
-    country VARCHAR(255),
-    profession VARCHAR(255),
-    phonenumber VARCHAR(255) UNIQUE
+    senha VARCHAR(20)
 );
 
 CREATE TABLE IF NOT EXISTS assinatura (
@@ -14,11 +11,11 @@ CREATE TABLE IF NOT EXISTS assinatura (
     comprado_em TIMESTAMP DEFAULT NOW()
 );
 
-INSERT INTO users(nome, age, country, profession, phonenumber)
+INSERT INTO users(nome, senha)
 VALUES
-    ('Balti Rusu', 74, 'Moldávía', 'Aposentada', '+373(50) 74983-9380'),
-    ('Gloria Hernandez', 45, 'El Salvador', 'Ator', '+503 83782-1037'),
-    ('Bruno Barros', 83, 'Brasil', 'Aposentado', '+55(61) 38023-0385'),
-    ('Helene Ngoyi', 58, 'República Democrática do Congo', 'Cientista', '+243 02838-2937'),
-    ('Gus King', 69, 'Nova Zelândia', 'Professor', '+64(0) 30938-3944'),
-    ('Lee Scholtes', 46, 'Luxemburgo', 'Médico', '+352 65982-6227');
+    ('Balti Rusu', 'ini444v4i'),
+    ('Gloria Hernandez', 'i4tv4vun'),
+    ('Bruno Barros', '8rn29nu'),
+    ('Helene Ngoyi', 'Senha'),
+    ('Gus King', '12344321'),
+    ('Lee Scholtes', '74v84u');

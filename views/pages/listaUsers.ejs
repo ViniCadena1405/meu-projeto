@@ -6,15 +6,12 @@
         <tr>
             <th>id</th>
             <th>nome</th>
-            <th>age</th>
-            <th>country</th>
-            <th>profession</th>
-            <th>phonenumber</th>
+            <th>senha</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td colspan = "6">Carregando...</td>
+            <td colspan = "3">Carregando...</td>
         </tr>
     </tbody>
 </table>
@@ -37,24 +34,21 @@
                     row.innerHTML = `
                         <td>${user.id}</td>
                         <td>${user.nome}</td>
-                        <td>${user.age}</td>
-                        <td>${user.country}</td>
-                        <td>${user.profession}</td>
-                        <td>${user.phonenumber}</td>
+                        <td>${user.senha}</td>
                     `;
                     tableBody.appendChild(row);
                 });
             }
 
             else {
-                tableBody.innerHTML = '<tr><td colspan = "6">Nenhum usuário encontrado</td></tr>';
+                tableBody.innerHTML = '<tr><td colspan = "3">Nenhum usuário encontrado</td></tr>';
             }
         }
 
         catch(error) {
             console.error(error);
             const tableBody = document.querySelector('#usersTable tbody');
-            tableBody.innerHTML = '<tr><td colspan = "6">Erro ao carregar</td></tr>';
+            tableBody.innerHTML = '<tr><td colspan = "3">Erro ao carregar</td></tr>';
         }
     }
 

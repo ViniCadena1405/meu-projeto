@@ -30,8 +30,8 @@ const getUserByID = async (req, res) => {
 
 const createUser = async (req, res) => {
     try {
-        const {nome, age, country, profession, phonenumber} = req.body;
-        const novoUsuario = await userService.createUser(nome, age, country, profession, phonenumber);
+        const {nome, senha} = req.body;
+        const novoUsuario = await userService.createUser(nome, senha);
         res.status(201).json(novoUsuario);
     }
 
@@ -42,8 +42,8 @@ const createUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
     try {
-        const {nome, age, country, profession, phonenumber} = req.body;
-        const updatedUser = await userService.updateUser(req.params.id, nome, age, country, profession, phonenumber);
+        const {nome, senha} = req.body;
+        const updatedUser = await userService.updateUser(req.params.id, nome, senha);
         if (updatedUser) {
             res.status(200).json(updatedUser);
         }
